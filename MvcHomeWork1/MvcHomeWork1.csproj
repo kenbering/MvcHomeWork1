@@ -188,6 +188,7 @@
     <Compile Include="Controllers\BankController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="CustomerModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,6 +210,9 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report_vw.cs">
+      <DependentUpon>CustomerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="客戶聯絡人.cs">
       <DependentUpon>CustomerModel.tt</DependentUpon>
     </Compile>
@@ -362,6 +366,7 @@
     <Content Include="Views\Bank\Create.cshtml" />
     <Content Include="Views\Bank\Edit.cshtml" />
     <Content Include="Views\Bank\Delete.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
