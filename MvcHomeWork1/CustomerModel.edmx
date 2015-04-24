@@ -45,8 +45,10 @@
 warning 6002: The table/view 'G:\PROJECTS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\客戶資料.MDF.dbo.Report_vw' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Report_vw">
           <Key>
+            <PropertyRef Name="Id" />
             <PropertyRef Name="客戶名稱" />
           </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="客戶名稱" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="聯絡人數量" Type="int" />
           <Property Name="銀行帳戶數量" Type="int" />
@@ -81,6 +83,7 @@ warning 6002: The table/view 'G:\PROJECTS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DA
           <EntitySet Name="客戶聯絡人" EntityType="Self.客戶聯絡人" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Report_vw" EntityType="Self.Report_vw" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+[Report_vw].[Id] AS [Id], 
 [Report_vw].[客戶名稱] AS [客戶名稱], 
 [Report_vw].[聯絡人數量] AS [聯絡人數量], 
 [Report_vw].[銀行帳戶數量] AS [銀行帳戶數量]
@@ -180,10 +183,12 @@ FROM [dbo].[Report_vw] AS [Report_vw]</DefiningQuery>
         <EntityType Name="Report_vw">
           <Key>
             <PropertyRef Name="客戶名稱" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="客戶名稱" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="聯絡人數量" Type="Int32" />
           <Property Name="銀行帳戶數量" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -233,6 +238,7 @@ FROM [dbo].[Report_vw] AS [Report_vw]</DefiningQuery>
           <EntitySetMapping Name="Report_vw">
             <EntityTypeMapping TypeName="CustomerModel.Report_vw">
               <MappingFragment StoreEntitySet="Report_vw">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="銀行帳戶數量" ColumnName="銀行帳戶數量" />
                 <ScalarProperty Name="聯絡人數量" ColumnName="聯絡人數量" />
                 <ScalarProperty Name="客戶名稱" ColumnName="客戶名稱" />
