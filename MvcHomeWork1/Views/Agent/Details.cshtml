@@ -1,0 +1,57 @@
+﻿@model MvcHomeWork1.客戶聯絡人
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>客戶聯絡人</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.客戶資料.客戶名稱)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.客戶資料.客戶名稱)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.職稱)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.職稱)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.姓名)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.姓名)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.手機)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.手機)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.電話)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.電話)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,61 @@
+﻿@model MvcHomeWork1.客戶銀行資訊
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>客戶銀行資訊</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.客戶資料.客戶名稱)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.客戶資料.客戶名稱)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.銀行名稱)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.銀行名稱)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.銀行代碼)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.銀行代碼)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.分行代碼)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.分行代碼)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.帳戶名稱)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.帳戶名稱)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.帳戶號碼)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.帳戶號碼)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
